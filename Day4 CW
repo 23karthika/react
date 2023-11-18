@@ -1,0 +1,25 @@
+export default Toggle;
+
+
+import React from "react";
+import { TextField,Autocomplete,Button } from "@mui/material";
+function Field(){
+    return(
+        <form>
+        <h1>Enter your name and favourite fruit:</h1>
+       <TextField data-testid="name" label="Name" variant="standard"sx={{height: 70}}/>
+       <Autocomplete data-testid="autocomplete" options={favfruit} renderInput={(params)=>
+       <TextField{...params}label="Choose a fruit"/>} sx={{height: 70}}
+       />
+        <Button style={{backgroundColor: 'blue', color: 'white'}}>SUBMIT</Button> 
+       </form>
+    );
+}
+const favfruit=[
+    { label: 'Apple'},
+    {label: 'Banana'},
+    {label: 'Cherry'},
+    {label: 'Durain'},
+    {label: 'Elderberry'}
+];
+export default Field;
